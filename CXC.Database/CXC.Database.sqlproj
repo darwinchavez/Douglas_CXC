@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>CXC.Database</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{8b3b079a-a38b-4230-aed1-fa64cc6da0b9}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>CXC.Database</RootNamespace>
+    <AssemblyName>CXC.Database</AssemblyName>
+    <ModelCollation>1033,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultCollation>SQL_Latin1_General_CP1_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\Abonos.sql" />
+    <Build Include="dbo\Tables\Clientes.sql" />
+    <Build Include="dbo\Tables\Creditos.sql" />
+    <Build Include="dbo\Tables\Demas.sql" />
+    <Build Include="dbo\Tables\EstadoCuenta.sql" />
+    <Build Include="dbo\Tables\EstCta1.sql" />
+    <Build Include="dbo\Tables\FirstFiltro.sql" />
+    <Build Include="dbo\Tables\PrimEstCta.sql" />
+    <Build Include="dbo\Tables\RdeFacturas.sql" />
+    <Build Include="dbo\Tables\RegistrosSalAnt.sql" />
+    <Build Include="dbo\Tables\RegistrosxCliente.sql" />
+    <Build Include="dbo\Tables\RepAbonos.sql" />
+    <Build Include="dbo\Tables\RepDetAbonos.sql" />
+    <Build Include="dbo\Tables\RepDetCreditos.sql" />
+    <Build Include="dbo\Tables\RepEstadoCuenta.sql" />
+    <Build Include="dbo\Tables\RepTarjetas.sql" />
+    <Build Include="dbo\Tables\RepVentas.sql" />
+    <Build Include="dbo\Tables\REstCta.sql" />
+    <Build Include="dbo\Tables\RestCtaClientes.sql" />
+    <Build Include="dbo\Tables\SalAntAbonos.sql" />
+    <Build Include="dbo\Tables\SalAntCreditos.sql" />
+    <Build Include="dbo\Tables\SaldoAnterior.sql" />
+    <Build Include="dbo\Tables\SaldoAnteriorCre.sql" />
+    <Build Include="dbo\Tables\Saldos.sql" />
+    <Build Include="dbo\Tables\SalIni.sql" />
+    <Build Include="dbo\Tables\SalxCli.sql" />
+    <Build Include="dbo\Tables\SalxCli2.sql" />
+    <Build Include="dbo\Tables\Tarjetas.sql" />
+    <Build Include="dbo\Tables\TotalAbonos.sql" />
+    <Build Include="dbo\Tables\TotalCreditos.sql" />
+    <Build Include="dbo\Tables\Transacciones.sql" />
+    <Build Include="dbo\Tables\TSaldoAnterior.sql" />
+  </ItemGroup>
+</Project>
